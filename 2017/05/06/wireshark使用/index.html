@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="tcp,http," />
 
 
 
@@ -90,15 +90,17 @@
 
 
 
-<meta name="description" content="To be a better man">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vincent's Notes">
-<meta property="og:url" content="http://yoursite.com/tags/chrome/index.html">
+<meta name="description" content="wireshark 实用过滤表达式">
+<meta name="keywords" content="tcp,http">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wireshark使用">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/wireshark使用/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="To be a better man">
+<meta property="og:description" content="wireshark 实用过滤表达式">
+<meta property="og:updated_time" content="2017-05-06T16:33:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vincent's Notes">
-<meta name="twitter:description" content="To be a better man">
+<meta name="twitter:title" content="wireshark使用">
+<meta name="twitter:description" content="wireshark 实用过滤表达式">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/chrome/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/wireshark使用/"/>
 
 
 
 
 
-  <title>Tag: chrome | Vincent's Notes</title>
+  <title>wireshark使用 | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -157,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -261,46 +263,184 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        chrome
-        <small>Tag</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/06/wireshark使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://kb-static.qiniucdn.com/0.jpeg?imageView2/2/w/100/h/100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vincent's Notes">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                wireshark使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-06T04:32:59+08:00">
+                2017-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="wireshark-实用过滤表达式"><a href="#wireshark-实用过滤表达式" class="headerlink" title="wireshark 实用过滤表达式"></a>wireshark 实用过滤表达式</h3><a id="more"></a>
+<ul>
+<li>wireshark最常用的自然是针对IP地址的过滤<ul>
+<li>对源地址为192.168.0.1的包的过滤，即抓取源地址满足要求的包：ip.src == 192.168.0.1</li>
+<li>对目的地址为192.168.0.1的包的过滤，即抓取目的地址满足要求的包：ip.dst == 192.168.0.1</li>
+<li>对源或者目的地址为192.168.0.1的包的过滤，即抓取满足源或者目的地址的ip地址是192.168.0.1的包：ip.addr == 192.168.0.1,或者 ip.src == 192.168.0.1 or ip.dst == 192.168.0.1</li>
+<li>要排除以上的数据包，我们只需要将其用括号囊括，然后使用 “!”：!(表达式)</li>
+</ul>
+</li>
+<li>针对协议过滤<ul>
+<li>仅仅需要捕获某种协议的数据包，表达式很简单仅仅需要把协议的名字输入即可，表达式为：http</li>
+<li>需要捕获多种协议的数据包，也只需对协议进行逻辑组合即可，表达式为：http or telnet （多种协议加上逻辑符号的组合即可）</li>
+<li>排除某种协议的数据包: !tcp</li>
+</ul>
+</li>
+<li>针对端口过滤<ul>
+<li>捕获某一端口的数据包，表达式为：tcp.port == 80</li>
+<li>捕获多端口的数据包，可以使用and来连接，下面是捕获高端口的表达式，表达式为：udp.port &gt;= 2048</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><a href="http://blog.csdn.net/a2657222/article/details/7820036" target="_blank" rel="external">http://blog.csdn.net/a2657222/article/details/7820036</a><br><a href="http://www.9upk.com/article/2537.html" target="_blank" rel="external">http://www.9upk.com/article/2537.html</a></p>
+</blockquote>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/05/01/在chrome调试js/" itemprop="url">
-              
-                <span itemprop="name">在chrome调试js</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-01T12:40:04+08:00"
-              content="2017-05-01" >
-          05-01
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tcp/" rel="tag"># tcp</a>
+          
+            <a href="/tags/http/" rel="tag"># http</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/06/http-缓存控制/" rel="next" title="http 缓存控制">
+                <i class="fa fa-chevron-left"></i> http 缓存控制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/06/tcptrace使用/" rel="prev" title="tcptrace使用">
+                tcptrace使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -308,6 +448,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -327,8 +471,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://kb-static.qiniucdn.com/0.jpeg?imageView2/2/w/100/h/100"
@@ -381,6 +534,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#wireshark-实用过滤表达式"><span class="nav-number">1.</span> <span class="nav-text">wireshark 实用过滤表达式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -501,6 +670,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
