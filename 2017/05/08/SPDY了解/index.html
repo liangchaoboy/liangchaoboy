@@ -90,17 +90,19 @@
 
 
 
-<meta name="description" content="http://www.williamlong.info/archives/3119.html">
+<meta name="description" content="SPDY 协议介绍 SPDY 目前是一种应用层实验性协议，旨在让互联网访问更快速，减少web页面的延迟 协议在SSL层的基础上，增加了一个session 层，从而在一个tcp 连接基础上，实现了多并发和交叉流传输 HTTP 的GET ,POST 仍旧采用旧有的消息格式，当然SPDY 协议对原有的数据做了封装和编码，这里采用Wrapper设计模式  基本特性 流复用: SPDY最牛逼的地方，是允许在">
 <meta name="keywords" content="http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SPDY了解">
 <meta property="og:url" content="http://yoursite.com/2017/05/08/SPDY了解/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="http://www.williamlong.info/archives/3119.html">
-<meta property="og:updated_time" content="2017-05-07T18:00:11.000Z">
+<meta property="og:description" content="SPDY 协议介绍 SPDY 目前是一种应用层实验性协议，旨在让互联网访问更快速，减少web页面的延迟 协议在SSL层的基础上，增加了一个session 层，从而在一个tcp 连接基础上，实现了多并发和交叉流传输 HTTP 的GET ,POST 仍旧采用旧有的消息格式，当然SPDY 协议对原有的数据做了封装和编码，这里采用Wrapper设计模式  基本特性 流复用: SPDY最牛逼的地方，是允许在">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/22525226_1.png">
+<meta property="og:updated_time" content="2017-05-09T17:09:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SPDY了解">
-<meta name="twitter:description" content="http://www.williamlong.info/archives/3119.html">
+<meta name="twitter:description" content="SPDY 协议介绍 SPDY 目前是一种应用层实验性协议，旨在让互联网访问更快速，减少web页面的延迟 协议在SSL层的基础上，增加了一个session 层，从而在一个tcp 连接基础上，实现了多并发和交叉流传输 HTTP 的GET ,POST 仍旧采用旧有的消息格式，当然SPDY 协议对原有的数据做了封装和编码，这里采用Wrapper设计模式  基本特性 流复用: SPDY最牛逼的地方，是允许在">
+<meta name="twitter:image" content="https://o6nalx2hr.qnssl.com/22525226_1.png">
 
 
 
@@ -354,7 +356,21 @@
       
 
       
-        <blockquote>
+        <h3 id="SPDY-协议介绍"><a href="#SPDY-协议介绍" class="headerlink" title="SPDY 协议介绍"></a>SPDY 协议介绍</h3><ul>
+<li>SPDY 目前是一种应用层实验性协议，旨在让互联网访问更快速，减少web页面的延迟</li>
+<li>协议在SSL层的基础上，增加了一个session 层，从而在一个tcp 连接基础上，实现了多并发和交叉流传输</li>
+<li>HTTP 的GET ,POST 仍旧采用旧有的消息格式，当然SPDY 协议对原有的数据做了封装和编码，这里采用Wrapper设计模式<img src="https://o6nalx2hr.qnssl.com/22525226_1.png" alt=""></li>
+</ul>
+<h3 id="基本特性"><a href="#基本特性" class="headerlink" title="基本特性"></a>基本特性</h3><ul>
+<li>流复用: SPDY最牛逼的地方，是允许在一个TCP连接里面，允许无限并发流（在双方资源可承受的情况下）。因为请求是在一个单一的通道交错传输，TCP的可以达到很高的效率，从而更少的网络连接需要，可以以很高的 数据密度做传输</li>
+<li>具备优先级的请求:虽然无限的并行数据流的解决了序列化的问题，但是它们引入了另一个问题：如果由于信道带宽的限制，客户端可能会阻止怕堵塞通道的要求。为了克服这个问题，SPDY实现请求的优先次序：客户端可以请求尽可能多的项目，每个请求分配一个优先级。这样即使高优先级的请求仍处在pending状态，通道也不会传输非关键的，低优先级的请求，这样就有效地阻止了传输拥塞</li>
+<li>HTTP Header 压缩:对于HTTP 请求，响应头，SPDY都做了压缩，这样包更小，对于RESTFUL类型的WEB2.0 ,or OpenAPI 业务，将会有可观的效率提升</li>
+</ul>
+<h3 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h3><ul>
+<li>服务器端推送:SPDY通过X-Associated-Content 协议头来向客户端推送数据，头通知客户端，我要向你推送资源，准备接收好了。最近火爆的Google+ ,如果你用chrome浏览器，默认就采用SPDY技术，并且开启了服务器推送技术。服务器的推技术，全面提升了用户体验，是G+ 产品很快占据了足够多的优势，最近Facebook 开发自己的浏览器，也有摆脱现在技术限制的考虑</li>
+<li>服务器暗示:不像上面提到的PUSH 技术，服务器会先告诉浏览器，你可以下载ABC资源了，这个ABC资源，可能就是下一个页面的JS ,CSS ，或者内容。服务器不会主动推送的，仍旧等待客户端请求，这对于低速网络，是个很大的优化，有点类似于我们的预加载技术</li>
+</ul>
+<blockquote>
 <p><a href="http://www.williamlong.info/archives/3119.html" target="_blank" rel="external">http://www.williamlong.info/archives/3119.html</a></p>
 </blockquote>
 
@@ -458,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://kb-static.qiniucdn.com/0.jpeg?imageView2/2/w/100/h/100"
@@ -474,7 +499,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -487,7 +512,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -512,6 +537,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SPDY-协议介绍"><span class="nav-number">1.</span> <span class="nav-text">SPDY 协议介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本特性"><span class="nav-number">2.</span> <span class="nav-text">基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级特性"><span class="nav-number">3.</span> <span class="nav-text">高级特性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

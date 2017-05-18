@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="chrome,js," />
+  <meta name="keywords" content="openssl,https," />
 
 
 
@@ -90,22 +90,20 @@
 
 
 
-<meta name="description" content="修改 js 代码">
-<meta name="keywords" content="chrome,js">
+<meta name="description" content="openssl 常见命令 查看服务端证书链  1openssl s_client -servername xxx.xxx.com -showcerts -connect xxx.com:443  查看证书 fingerprint  1openssl x509 -noout -fingerprint -sha1  -in server.key  验证证书私钥是否匹配  1(openssl x509">
+<meta name="keywords" content="openssl,https">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在chrome调试js">
-<meta property="og:url" content="http://yoursite.com/2017/05/01/在chrome调试js/index.html">
+<meta property="og:title" content="openssl和https">
+<meta property="og:url" content="http://yoursite.com/2017/05/10/openssl和https/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="修改 js 代码">
-<meta property="og:image" content="https://o6nalx2hr.qnssl.com/QQ20170501-123551@2x.png">
-<meta property="og:image" content="https://o6nalx2hr.qnssl.com/QQ20170501-123619.png">
-<meta property="og:image" content="https://o6nalx2hr.qnssl.com/QQ20170501-123642.png">
-<meta property="og:image" content="https://o6nalx2hr.qnssl.com/QQ20170501-125849.png">
-<meta property="og:updated_time" content="2017-05-06T15:38:52.000Z">
+<meta property="og:description" content="openssl 常见命令 查看服务端证书链  1openssl s_client -servername xxx.xxx.com -showcerts -connect xxx.com:443  查看证书 fingerprint  1openssl x509 -noout -fingerprint -sha1  -in server.key  验证证书私钥是否匹配  1(openssl x509">
+<meta property="og:image" content="http://ol4y0og1e.bkt.clouddn.com/wotong.png">
+<meta property="og:image" content="http://ol4y0og1e.bkt.clouddn.com/wo2.png">
+<meta property="og:updated_time" content="2017-05-18T16:22:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在chrome调试js">
-<meta name="twitter:description" content="修改 js 代码">
-<meta name="twitter:image" content="https://o6nalx2hr.qnssl.com/QQ20170501-123551@2x.png">
+<meta name="twitter:title" content="openssl和https">
+<meta name="twitter:description" content="openssl 常见命令 查看服务端证书链  1openssl s_client -servername xxx.xxx.com -showcerts -connect xxx.com:443  查看证书 fingerprint  1openssl x509 -noout -fingerprint -sha1  -in server.key  验证证书私钥是否匹配  1(openssl x509">
+<meta name="twitter:image" content="http://ol4y0og1e.bkt.clouddn.com/wotong.png">
 
 
 
@@ -133,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/01/在chrome调试js/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/10/openssl和https/"/>
 
 
 
 
 
-  <title>在chrome调试js | Vincent's Notes</title>
+  <title>openssl和https | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -288,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/01/在chrome调试js/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/10/openssl和https/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -309,7 +307,7 @@
             
             
               
-                在chrome调试js
+                openssl和https
               
             
           </h1>
@@ -324,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-01T12:40:04+08:00">
-                2017-05-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-10T16:10:43+08:00">
+                2017-05-10
               </time>
             
 
@@ -359,20 +357,62 @@
       
 
       
-        <h4 id="修改-js-代码"><a href="#修改-js-代码" class="headerlink" title="修改 js 代码"></a>修改 js 代码</h4><a id="more"></a>
+        <h3 id="openssl-常见命令"><a href="#openssl-常见命令" class="headerlink" title="openssl 常见命令"></a>openssl 常见命令</h3><ul>
+<li>查看服务端证书链</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl s_client -servername xxx.xxx.com -showcerts -connect xxx.com:443</div></pre></td></tr></table></figure>
 <ul>
-<li>打开 js 控制台，快捷键 cmomand + Option +j </li>
-<li>找到对应需要的 js 源码文件，修改 js</li>
-<li>command + s 保存 修改</li>
-<li><img src="https://o6nalx2hr.qnssl.com/QQ20170501-123551@2x.png" alt="找到对应需要的 js 源码文件，修改 js"></li>
-<li><img src="https://o6nalx2hr.qnssl.com/QQ20170501-123619.png" alt="command + s 保存 修改"></li>
-<li><img src="https://o6nalx2hr.qnssl.com/QQ20170501-123642.png" alt="test"></li>
+<li>查看证书 fingerprint</li>
 </ul>
-<h4 id="添加断点"><a href="#添加断点" class="headerlink" title="添加断点"></a>添加断点</h4><ul>
-<li>打开 js 控制台，快捷键 cmomand + Option +j </li>
-<li>找到需要断点的行， 点击行数，颜色变为蓝色为设置断点</li>
-<li><img src="https://o6nalx2hr.qnssl.com/QQ20170501-125849.png" alt="找到需要断点的行， 点击行数，颜色变为蓝色为设置断点"></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl x509 -noout -fingerprint -sha1  -in server.key</div></pre></td></tr></table></figure>
+<ul>
+<li>验证证书私钥是否匹配</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(openssl x509 -noout -modulus -in server.pem  ; openssl rsa -noout -modulus -in server.key ) | uniq</div></pre></td></tr></table></figure>
+<ul>
+<li>查看证书的一些信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl  x509  -noout -text  -in  server.crt</div></pre></td></tr></table></figure>
+<ul>
+<li>curl  https 不能使用 -x 来执行代理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -IL https://xxx.com/ -v --resolve xxx.com:443:182.34.127.156  --resolve xxx.com:80:182.34.127.156</div></pre></td></tr></table></figure>
+<h3 id="证书链"><a href="#证书链" class="headerlink" title="证书链"></a>证书链</h3><ul>
+<li><p>实际使用的证书其实为一个证书链，包含多个证书，以 base64 文本形式拼接在一起，每个证书间有一个或两个换行符</p>
+<ul>
+<li><p>一般有三级：</p>
+<ul>
+<li>server.crt  代理机构对域名签名的证书</li>
+<li>ca.crt 根证书机构给代理机构颁发的签名证书</li>
+<li>root.crt 根证书机构给自己颁发的签名证书</li>
+</ul>
+</li>
+<li><p>有时有四级:</p>
+<ul>
+<li>server.crt  二级代理机构对域名签名的证书</li>
+<li>ca1.crt 高级代理机构给二级代理机构颁发的签名证书</li>
+<li>ca2.crt 根证书机构给高级代理机构颁发的签名证书</li>
+<li>root.crt 根证书机构给自己颁发的签名证书</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一般地，部署证书时根证书不用部署。每台客户端机器在出厂或安装操作系统时，都预装了权威的根证书,不受信任的根证书，客户端不信任，部署也无用—–除非客户添加对证书的信任。所以实际部署的证书，一般是 两级 或 三级，但客户端机器预装了根证书，浏览器显示一般是 三级 或 四级。        </p>
+</li>
+<li><p>特别说明下泛域名证书只支持 一级泛域名 。 如泛域名证书 *.a.com  支持 b.a.com ，支持 c-b.a.com ，但不支持  c.b.a.com</p>
+</li>
+</ul>
+<h3 id="常见的错误"><a href="#常见的错误" class="headerlink" title="常见的错误"></a>常见的错误</h3><ul>
+<li>根证书不被信任的错误</li>
+</ul>
+<p><img src="http://ol4y0og1e.bkt.clouddn.com/wotong.png" alt=""></p>
+<ul>
+<li>缺少 ca 证书的错误, 浏览器可能行为：获取证书的颁发者，看这个颁发者是否受信任。此时返回的证书链最后一级的颁发者并不直接受浏览器信任（此证书链最后一级的颁发者的颁发者才受信任）</li>
+</ul>
+<p><img src="http://ol4y0og1e.bkt.clouddn.com/wo2.png" alt=""></p>
+<blockquote>
+<p><a href="https://www.openssl.org/docs/manmaster/man1/" target="_blank" rel="external">https://www.openssl.org/docs/manmaster/man1/</a></p>
+</blockquote>
 
       
     </div>
@@ -402,9 +442,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/chrome/" rel="tag"># chrome</a>
+            <a href="/tags/openssl/" rel="tag"># openssl</a>
           
-            <a href="/tags/js/" rel="tag"># js</a>
+            <a href="/tags/https/" rel="tag"># https</a>
           
         </div>
       
@@ -417,8 +457,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/03/空壳主体/" rel="next" title="空壳主体">
-                <i class="fa fa-chevron-left"></i> 空壳主体
+              <a href="/2017/05/15/Spark-RDDs/" rel="next" title="Spark RDDs">
+                <i class="fa fa-chevron-left"></i> Spark RDDs
               </a>
             
           </div>
@@ -427,8 +467,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/26/shell常见面试题/" rel="prev" title="shell常见面试题">
-                shell常见面试题 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/08/http2学习/" rel="prev" title="http2学习">
+                http2学习 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-js-代码"><span class="nav-number">1.</span> <span class="nav-text">修改 js 代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加断点"><span class="nav-number">2.</span> <span class="nav-text">添加断点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#openssl-常见命令"><span class="nav-number">1.</span> <span class="nav-text">openssl 常见命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#证书链"><span class="nav-number">2.</span> <span class="nav-text">证书链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的错误"><span class="nav-number">3.</span> <span class="nav-text">常见的错误</span></a></li></ol></div>
             
 
           </div>
