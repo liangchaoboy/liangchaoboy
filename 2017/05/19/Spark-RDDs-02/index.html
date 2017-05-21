@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="http," />
+  <meta name="keywords" content="spark," />
 
 
 
@@ -90,17 +90,21 @@
 
 
 
-<meta name="description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
-<meta name="keywords" content="http">
+<meta name="description" content="承接 Spark-RDD   mapValues(fun) : 对[K,V]型数据中的V值map操作  1234567val list = List((&amp;quot;mobin&amp;quot;, 22), (&amp;quot;kpop&amp;quot;, 20), (&amp;quot;lufei&amp;quot;, 23))val rdd = sc.parallelize(list)val mapValuesRDD = rd">
+<meta name="keywords" content="spark">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Content-disposition中Attachment和inline的区别">
-<meta property="og:url" content="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/index.html">
+<meta property="og:title" content="Spark-RDDs_02">
+<meta property="og:url" content="http://yoursite.com/2017/05/19/Spark-RDDs-02/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
-<meta property="og:updated_time" content="2017-05-18T12:36:12.000Z">
+<meta property="og:description" content="承接 Spark-RDD   mapValues(fun) : 对[K,V]型数据中的V值map操作  1234567val list = List((&amp;quot;mobin&amp;quot;, 22), (&amp;quot;kpop&amp;quot;, 20), (&amp;quot;lufei&amp;quot;, 23))val rdd = sc.parallelize(list)val mapValuesRDD = rd">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/WX20170521-212732@2x.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/faltMapValues.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/cogroup.png">
+<meta property="og:updated_time" content="2017-05-21T15:31:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Content-disposition中Attachment和inline的区别">
-<meta name="twitter:description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
+<meta name="twitter:title" content="Spark-RDDs_02">
+<meta name="twitter:description" content="承接 Spark-RDD   mapValues(fun) : 对[K,V]型数据中的V值map操作  1234567val list = List((&amp;quot;mobin&amp;quot;, 22), (&amp;quot;kpop&amp;quot;, 20), (&amp;quot;lufei&amp;quot;, 23))val rdd = sc.parallelize(list)val mapValuesRDD = rd">
+<meta name="twitter:image" content="https://o6nalx2hr.qnssl.com/WX20170521-212732@2x.png">
 
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/19/Spark-RDDs-02/"/>
 
 
 
 
 
-  <title>Content-disposition中Attachment和inline的区别 | Vincent's Notes</title>
+  <title>Spark-RDDs_02 | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -283,7 +287,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/19/Spark-RDDs-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -304,7 +308,7 @@
             
             
               
-                Content-disposition中Attachment和inline的区别
+                Spark-RDDs_02
               
             
           </h1>
@@ -319,8 +323,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-18T20:35:03+08:00">
-                2017-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-19T21:48:10+08:00">
+                2017-05-19
               </time>
             
 
@@ -329,6 +333,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -354,10 +380,39 @@
       
 
       
-        <ul>
-<li>Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件</li>
-<li>Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件</li>
+        <blockquote>
+<p>承接 <a href="https://liangchaoboy.github.io/2017/05/15/Spark-RDDs/#more" target="_blank" rel="external">Spark-RDD</a></p>
+</blockquote>
+<ul>
+<li>mapValues(fun) : 对[K,V]型数据中的V值map操作</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">val list = List((&quot;mobin&quot;, 22), (&quot;kpop&quot;, 20), (&quot;lufei&quot;, 23))</div><div class="line"></div><div class="line">val rdd = sc.parallelize(list)</div><div class="line"></div><div class="line">val mapValuesRDD = rdd.mapValues(_+2)</div><div class="line"></div><div class="line">mapValuesRDD.foreach( println)</div></pre></td></tr></table></figure>
+<p><img src="https://o6nalx2hr.qnssl.com/WX20170521-212732@2x.png" alt="mapValues图示"></p>
+<ul>
+<li>flatMapValues(fun) : 对[K,V]型数据中的V值flatmap操作</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">val list = List((&quot;mobin&quot;, 22), (&quot;kpop&quot;, 20), (&quot;lufei&quot;, 23))</div><div class="line"></div><div class="line">val rdd = sc.parallelize(list)</div><div class="line"></div><div class="line">val flatMapRDD = rdd.flatMapValues(x =&gt; Seq(x,&quot;test!&quot;))</div><div class="line"></div><div class="line">flatMapRDD.collect</div></pre></td></tr></table></figure>
+<p><img src="https://o6nalx2hr.qnssl.com/faltMapValues.png" alt="flatMapValues"></p>
+<ul>
+<li>reduceByKey(func,numPartitions):按Key进行分组，使用给定的func函数聚合value值, numPartitions设置分区数，提高作业并行度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">val list = List((&quot;A&quot;, 2), (&quot;B&quot;, 20), (&quot;A&quot;, 23))</div><div class="line"></div><div class="line">val rdd = sc.parallelize(list)</div><div class="line"></div><div class="line">val flatMapRDD = rdd.reduceByKey(_+_)</div><div class="line"></div><div class="line">flatMapRDD.collect</div><div class="line"></div><div class="line">Array[(String, Int)] = Array((A,25), (B,20))</div></pre></td></tr></table></figure>
+<ul>
+<li>sortByKey(accending，numPartitions):返回以Key排序的（K,V）键值对组成的RDD，accending为true时表示升序，为false时表示降序，numPartitions设置分区数，提高作业并行度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">val list = List((19, &quot;W&quot;), (0, 20), (7, 23))</div><div class="line"></div><div class="line">val rdd = sc.parallelize(list)</div><div class="line"></div><div class="line"></div><div class="line">val flatMapRDD = rdd.sortByKey()</div><div class="line"></div><div class="line">flatMapRDD.collect</div><div class="line"></div><div class="line">Array[(Int, Any)] = Array((0,20), (7,23), (19,W))</div></pre></td></tr></table></figure>
+<ul>
+<li>cogroup(otherDataSet，numPartitions) : 对两个RDD(如:(K,V)和(K,W))相同Key的元素先分别做聚合，最后返回(K,Iterator<v>,Iterator<w>)形式的RDD,numPartitions设置分区数，提高作业并行度</w></v></li>
+</ul>
+<pre><code>
+val arr = List((&quot;A&quot;, 1), (&quot;B&quot;, 2), (&quot;A&quot;, 2), (&quot;B&quot;, 3))
+val arr1 = List((&quot;A&quot;, &quot;A1&quot;), (&quot;B&quot;, &quot;B1&quot;), (&quot;A&quot;, &quot;A2&quot;), (&quot;B&quot;, &quot;B2&quot;))
+val rdd1 = sc.parallelize(arr, 3)
+val rdd2 = sc.parallelize(arr1, 3)
+val groupByKeyRDD = rdd1.cogroup(rdd2)
+
+Array[(String, (Iterable[Int], Iterable[String]))] = Array((B,(CompactBuffer(2, 3),CompactBuffer(B2, B1))), (A,(CompactBuffer(1, 2),CompactBuffer(A1, A2))))
+</code></pre><p><img src="https://o6nalx2hr.qnssl.com/cogroup.png" alt=""></p>
 
       
     </div>
@@ -387,7 +442,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/http/" rel="tag"># http</a>
+            <a href="/tags/spark/" rel="tag"># spark</a>
           
         </div>
       
@@ -400,8 +455,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/19/Spark-RDDs-02/" rel="next" title="Spark-RDDs_02">
-                <i class="fa fa-chevron-left"></i> Spark-RDDs_02
+              <a href="/2017/05/21/spark-stu-list/" rel="next" title="spark_stu_list">
+                <i class="fa fa-chevron-left"></i> spark_stu_list
               </a>
             
           </div>
@@ -410,8 +465,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/15/Spark-RDDs/" rel="prev" title="Spark RDDs">
-                Spark RDDs <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/18/Content-disposition中Attachment和inline的区别/" rel="prev" title="Content-disposition中Attachment和inline的区别">
+                Content-disposition中Attachment和inline的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

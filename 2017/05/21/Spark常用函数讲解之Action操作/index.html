@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="http," />
+  <meta name="keywords" content="spark," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
-<meta name="keywords" content="http">
+<meta name="description" content="承接   reduce(func) : 通过函数func先聚集各分区的数据集，再聚集分区之间的数据，func接收两个参数，返回一个新值，新值再做为参数继续传递给函数func，直到最后一个元素  12345val rdd = sc.parallelize(1 to 100, 5)rdd.reduce(_+_)Int = 5050  collect() : 以数据的形式返回数据集中的所有元素给Dri">
+<meta name="keywords" content="spark">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Content-disposition中Attachment和inline的区别">
-<meta property="og:url" content="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/index.html">
+<meta property="og:title" content="Spark常用函数讲解之Action操作">
+<meta property="og:url" content="http://yoursite.com/2017/05/21/Spark常用函数讲解之Action操作/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
-<meta property="og:updated_time" content="2017-05-18T12:36:12.000Z">
+<meta property="og:description" content="承接   reduce(func) : 通过函数func先聚集各分区的数据集，再聚集分区之间的数据，func接收两个参数，返回一个新值，新值再做为参数继续传递给函数func，直到最后一个元素  12345val rdd = sc.parallelize(1 to 100, 5)rdd.reduce(_+_)Int = 5050  collect() : 以数据的形式返回数据集中的所有元素给Dri">
+<meta property="og:updated_time" content="2017-05-21T16:12:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Content-disposition中Attachment和inline的区别">
-<meta name="twitter:description" content="Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件 Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件">
+<meta name="twitter:title" content="Spark常用函数讲解之Action操作">
+<meta name="twitter:description" content="承接   reduce(func) : 通过函数func先聚集各分区的数据集，再聚集分区之间的数据，func接收两个参数，返回一个新值，新值再做为参数继续传递给函数func，直到最后一个元素  12345val rdd = sc.parallelize(1 to 100, 5)rdd.reduce(_+_)Int = 5050  collect() : 以数据的形式返回数据集中的所有元素给Dri">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/21/Spark常用函数讲解之Action操作/"/>
 
 
 
 
 
-  <title>Content-disposition中Attachment和inline的区别 | Vincent's Notes</title>
+  <title>Spark常用函数讲解之Action操作 | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -283,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/18/Content-disposition中Attachment和inline的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/Spark常用函数讲解之Action操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -304,7 +304,7 @@
             
             
               
-                Content-disposition中Attachment和inline的区别
+                Spark常用函数讲解之Action操作
               
             
           </h1>
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-18T20:35:03+08:00">
-                2017-05-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-21T23:31:00+08:00">
+                2017-05-21
               </time>
             
 
@@ -329,6 +329,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spark/" itemprop="url" rel="index">
+                    <span itemprop="name">spark</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -354,10 +376,50 @@
       
 
       
-        <ul>
-<li>Content-disposition: inline; filename=foobar.pdf 表示浏览器显示文件</li>
-<li>Content-disposition: attachment; filename=foobar.pdf 表示通知浏览器下载文件</li>
+        <blockquote>
+<p><a href="">承接</a></p>
+</blockquote>
+<ul>
+<li>reduce(func) : 通过函数func先聚集各分区的数据集，再聚集分区之间的数据，func接收两个参数，返回一个新值，新值再做为参数继续传递给函数func，直到最后一个元素</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 100, 5)</div><div class="line"></div><div class="line">rdd.reduce(_+_)</div><div class="line"></div><div class="line">Int = 5050</div></pre></td></tr></table></figure>
+<ul>
+<li>collect() : 以数据的形式返回数据集中的所有元素给Driver程序，为防止Driver程序内存溢出，一般要控制返回的数据集大小</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.collect</div><div class="line"></div><div class="line">Array[Int] = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)</div></pre></td></tr></table></figure>
+<ul>
+<li>count()：返回数据集元素个数</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.count()</div><div class="line"></div><div class="line">res101: Long = 10</div></pre></td></tr></table></figure>
+<ul>
+<li>first() : 返回数据集的第一个元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.first()</div><div class="line"></div><div class="line">res104: Int = 1</div></pre></td></tr></table></figure>
+<ul>
+<li>take(n) : 以数组的形式返回数据集上的前n个元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.take(5)</div><div class="line"></div><div class="line">res107: Array[Int] = Array(1, 2, 3, 4, 5)</div></pre></td></tr></table></figure>
+<ul>
+<li>top(n):按默认或者指定的排序规则返回前n个元素，默认按降序输出</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.top(5)</div><div class="line"></div><div class="line">res128: Array[Int] = Array(10, 9, 8, 7, 6)</div></pre></td></tr></table></figure>
+<ul>
+<li>takeOrdered(n,[ordering]): 按自然顺序或者指定的排序规则返回前n个元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">val rdd = sc.parallelize(1 to 10, 5)</div><div class="line"></div><div class="line">rdd.takeOrdered(3)</div><div class="line"></div><div class="line">res135: Array[Int] = Array(1, 2, 3)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>countByKey():作用于K-V类型的RDD上，统计每个key的个数，返回(K,K的个数)</p>
+</li>
+<li><p>collectAsMap():作用于K-V类型的RDD上，作用与collect不同的是collectAsMap函数不包含重复的key，对于重复的key。后面的元素覆盖前面的元素</p>
+</li>
+<li><p>lookup(k)：作用于K-V类型的RDD上，返回指定K的所有V值</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">val list = List((2, 14), (3, 23), (2, 1))</div><div class="line"></div><div class="line">val rdd = sc.parallelize(list)</div><div class="line"></div><div class="line">rdd.lookup(2)</div><div class="line"></div><div class="line">res138: Seq[Int] = WrappedArray(14, 1)</div></pre></td></tr></table></figure>
+<ul>
+<li>saveAsFile(path:String) : 将最终的结果数据保存到指定的HDFS目录中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import org.apache.hadoop.io.compress.GzipCodec</div><div class="line">sc.hadoopConfiguration.set(&quot;mapreduce.input.fileinputformat.split.minsize&quot;, &quot;268435456&quot;)</div><div class="line"></div><div class="line">var w=s&quot;saveFile&quot;</div><div class="line"></div><div class="line">val textFile = sc.textFile(&quot;srcFile&quot;)</div><div class="line"></div><div class="line">val counts = textFile.filter(_.toLowerCase.contains(&quot;200&quot;)).map(_.split(&quot; &quot;)).map(x=&gt;(x(0),1)).reduceByKey(_+_).map(x=&gt;(x._2,x._1)).sortBy(x =&gt; x, false, 1).saveAsTextFile(w,classOf[GzipCodec])</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -387,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/http/" rel="tag"># http</a>
+            <a href="/tags/spark/" rel="tag"># spark</a>
           
         </div>
       
@@ -400,18 +462,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/19/Spark-RDDs-02/" rel="next" title="Spark-RDDs_02">
-                <i class="fa fa-chevron-left"></i> Spark-RDDs_02
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/15/Spark-RDDs/" rel="prev" title="Spark RDDs">
-                Spark RDDs <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/21/spark-stu-list/" rel="prev" title="spark_stu_list">
+                spark_stu_list <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
