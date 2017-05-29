@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -90,17 +90,28 @@
 
 
 
-<meta name="description" content="参考 hexo 官方文档和 nexT 主题说明即可">
-<meta name="keywords" content="hexo">
+<meta name="description" content="格式化和挂载数据盘 fdisk -l 查看数据盘， 注意：在没有分区和格式化数据盘之前，使用 df -h 命令是无法看到数据盘的。在下面的示例中，有一个 42 GB 的数据盘需要挂载    运行 fdisk /dev/vdb，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了    运行 fdisk -l 命令，查看新的分区。新分区 vdb1 已经创建好。如下面示例中的">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 静态博客搭建">
-<meta property="og:url" content="http://yoursite.com/2017/04/25/hexo-静态博客搭建/index.html">
+<meta property="og:title" content="linux 云主机磁盘挂载">
+<meta property="og:url" content="http://yoursite.com/2017/05/24/linux-云主机磁盘挂载/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="参考 hexo 官方文档和 nexT 主题说明即可">
-<meta property="og:updated_time" content="2017-05-18T14:24:52.000Z">
+<meta property="og:description" content="格式化和挂载数据盘 fdisk -l 查看数据盘， 注意：在没有分区和格式化数据盘之前，使用 df -h 命令是无法看到数据盘的。在下面的示例中，有一个 42 GB 的数据盘需要挂载    运行 fdisk /dev/vdb，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了    运行 fdisk -l 命令，查看新的分区。新分区 vdb1 已经创建好。如下面示例中的">
+<meta property="og:image" content="http://ol4y0og1e.bkt.clouddn.com/fdisk_01.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/fdisk_02.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/fdisk_03.png">
+<meta property="og:image" content="http://ol4y0og1e.bkt.clouddn.com/mkfs_01.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/fdisk_04.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/mount_01.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/02_01.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/02_02.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/02_03.png">
+<meta property="og:image" content="https://o6nalx2hr.qnssl.com/03_04.png">
+<meta property="og:updated_time" content="2017-05-29T15:47:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 静态博客搭建">
-<meta name="twitter:description" content="参考 hexo 官方文档和 nexT 主题说明即可">
+<meta name="twitter:title" content="linux 云主机磁盘挂载">
+<meta name="twitter:description" content="格式化和挂载数据盘 fdisk -l 查看数据盘， 注意：在没有分区和格式化数据盘之前，使用 df -h 命令是无法看到数据盘的。在下面的示例中，有一个 42 GB 的数据盘需要挂载    运行 fdisk /dev/vdb，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了    运行 fdisk -l 命令，查看新的分区。新分区 vdb1 已经创建好。如下面示例中的">
+<meta name="twitter:image" content="http://ol4y0og1e.bkt.clouddn.com/fdisk_01.png">
 
 
 
@@ -128,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/25/hexo-静态博客搭建/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/24/linux-云主机磁盘挂载/"/>
 
 
 
 
 
-  <title>hexo 静态博客搭建 | Vincent's Notes</title>
+  <title>linux 云主机磁盘挂载 | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -293,7 +304,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/hexo-静态博客搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/24/linux-云主机磁盘挂载/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Vincent">
@@ -314,7 +325,7 @@
             
             
               
-                hexo 静态博客搭建
+                linux 云主机磁盘挂载
               
             
           </h1>
@@ -329,8 +340,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-25T02:39:45+08:00">
-                2017-04-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-24T00:18:49+08:00">
+                2017-05-24
               </time>
             
 
@@ -339,6 +350,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -364,13 +397,42 @@
       
 
       
-        <ul>
-<li>参考 hexo 官方文档和 nexT 主题说明即可<a id="more"></a></li>
-<li>参考资料：<ul>
-<li><a href="https://hexo.io/zh-cn/docs/server.html" target="_blank" rel="external">hexo官方文档</a></li>
-<li><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">nexT</a></li>
+        <h3 id="格式化和挂载数据盘"><a href="#格式化和挂载数据盘" class="headerlink" title="格式化和挂载数据盘"></a>格式化和挂载数据盘</h3><ul>
+<li>fdisk -l 查看数据盘， 注意：在没有分区和格式化数据盘之前，使用 df -h 命令是无法看到数据盘的。在下面的示例中，有一个 42 GB 的数据盘需要挂载</li>
 </ul>
+<p><img src="http://ol4y0og1e.bkt.clouddn.com/fdisk_01.png" alt=""></p>
+<ul>
+<li>运行 fdisk /dev/vdb，对数据盘进行分区。根据提示，依次输入 n，p，1，两次回车，wq，分区就开始了</li>
+</ul>
+<p><img src="https://o6nalx2hr.qnssl.com/fdisk_02.png" alt=""></p>
+<ul>
+<li>运行 fdisk -l 命令，查看新的分区。新分区 vdb1 已经创建好。如下面示例中的/dev/vdb1</li>
+</ul>
+<p><img src="https://o6nalx2hr.qnssl.com/fdisk_03.png" alt=""></p>
+<ul>
+<li>运行 mkfs.ext3 /dev/vdb1，对新分区进行格式化。格式化所需时间取决于数据盘大小</li>
+</ul>
+<p><img src="http://ol4y0og1e.bkt.clouddn.com/mkfs_01.png" alt=""></p>
+<ul>
+<li>运行 echo /dev/vdb1 /mnt/disk1 ext3 defaults 0 0 &gt;&gt; /etc/fstab 写入新分区信息。完成后，可以使用 cat /etc/fstab 命令查看, 如果需要把数据盘单独挂载到某个文件夹，可以修改以上命令中的 /mnt/disk1 部分</li>
+</ul>
+<p><img src="https://o6nalx2hr.qnssl.com/fdisk_04.png" alt=""></p>
+<ul>
+<li>运行 mount /dev/vdb1 /mnt 挂载新分区，然后执行 df -h 查看分区。如果出现数据盘信息，说明挂载成功，可以使用新分区了</li>
+</ul>
+<p><img src="https://o6nalx2hr.qnssl.com/mount_01.png" alt=""></p>
+<h3 id="磁盘扩容"><a href="#磁盘扩容" class="headerlink" title="磁盘扩容"></a>磁盘扩容</h3><ul>
+<li>防止数据丢失，先做快照</li>
+<li>先卸载磁盘， umount /mnt/disk1</li>
+<li>控制台卸载磁盘</li>
+<li>扩容后，控制台重新挂载磁盘</li>
+<li>删除源分区，使用 fdisk 指令，输入 d 来删除原有的分区，依次使用 n, p, 1 新建分区<br><img src="https://o6nalx2hr.qnssl.com/02_01.png" alt=""><br><img src="https://o6nalx2hr.qnssl.com/02_02.png" alt=""></li>
+<li>检查文件系统，并变更文件系统大小，使用 e2fsck 和 resize2fs 指令，正确操作情况下，不会造成原有数据丢失的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e2fsck -f /dev/vdb1</div><div class="line">resize2fs /dev/vdb1</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<p><img src="https://o6nalx2hr.qnssl.com/02_03.png" alt=""></p>
+<ul>
+<li>用 df -h 指令可以查看到磁盘的信息<br><img src="https://o6nalx2hr.qnssl.com/03_04.png" alt=""></li>
 </ul>
 
       
@@ -401,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
         </div>
       
@@ -414,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/shell常见面试题/" rel="next" title="shell常见面试题">
-                <i class="fa fa-chevron-left"></i> shell常见面试题
+              <a href="/2017/05/29/fdisk命令实践/" rel="next" title="fdisk命令实践">
+                <i class="fa fa-chevron-left"></i> fdisk命令实践
               </a>
             
           </div>
@@ -423,6 +485,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/22/添加ssh公钥/" rel="prev" title="添加ssh公钥">
+                添加ssh公钥 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -469,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://kb-static.qiniucdn.com/0.jpeg?imageView2/2/w/100/h/100"
@@ -532,6 +607,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化和挂载数据盘"><span class="nav-number">1.</span> <span class="nav-text">格式化和挂载数据盘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#磁盘扩容"><span class="nav-number">2.</span> <span class="nav-text">磁盘扩容</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

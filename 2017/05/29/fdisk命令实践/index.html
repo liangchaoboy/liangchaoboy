@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -90,15 +90,17 @@
 
 
 
-<meta name="description" content="To be a better man">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vincent's Notes">
-<meta property="og:url" content="http://yoursite.com/archives/2017/05/page/2/index.html">
+<meta name="description" content="l : 显示分区类型 m ：显示菜单和帮助信息 a ：活动分区标记/引导分区 d ：删除分区 n ：新建分区 p ：显示分区信息 q ：退出不保存 t ：设置分区号 v ：进行分区检查 w ：保存修改 x ：扩展应用，高级功能">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fdisk命令实践">
+<meta property="og:url" content="http://yoursite.com/2017/05/29/fdisk命令实践/index.html">
 <meta property="og:site_name" content="Vincent's Notes">
-<meta property="og:description" content="To be a better man">
+<meta property="og:description" content="l : 显示分区类型 m ：显示菜单和帮助信息 a ：活动分区标记/引导分区 d ：删除分区 n ：新建分区 p ：显示分区信息 q ：退出不保存 t ：设置分区号 v ：进行分区检查 w ：保存修改 x ：扩展应用，高级功能">
+<meta property="og:updated_time" content="2017-05-29T05:18:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vincent's Notes">
-<meta name="twitter:description" content="To be a better man">
+<meta name="twitter:title" content="fdisk命令实践">
+<meta name="twitter:description" content="l : 显示分区类型 m ：显示菜单和帮助信息 a ：活动分区标记/引导分区 d ：删除分区 n ：新建分区 p ：显示分区信息 q ：退出不保存 t ：设置分区号 v ：进行分区检查 w ：保存修改 x ：扩展应用，高级功能">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/05/page/2/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/29/fdisk命令实践/"/>
 
 
 
 
 
-  <title>Archive | Vincent's Notes</title>
+  <title>fdisk命令实践 | Vincent's Notes</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -157,7 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -281,403 +283,189 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      Um..! 22 posts in total. Keep on posting.
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/29/fdisk命令实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vincent">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://kb-static.qiniucdn.com/0.jpeg?imageView2/2/w/100/h/100">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vincent's Notes">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                fdisk命令实践
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-29T13:07:30+08:00">
+                2017-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <ul>
+<li>l : 显示分区类型</li>
+<li>m ：显示菜单和帮助信息</li>
+<li>a ：活动分区标记/引导分区</li>
+<li>d ：删除分区</li>
+<li>n ：新建分区</li>
+<li>p ：显示分区信息</li>
+<li>q ：退出不保存</li>
+<li>t ：设置分区号</li>
+<li>v ：进行分区检查</li>
+<li>w ：保存修改</li>
+<li>x ：扩展应用，高级功能</li>
+</ul>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
         </div>
       
+
+      
+        
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/08/SPDY了解/" itemprop="url">
-              
-                <span itemprop="name">SPDY了解</span>
-              
-            </a>
-        
-      </h1>
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/linux-云主机磁盘挂载/" rel="prev" title="linux 云主机磁盘挂载">
+                linux 云主机磁盘挂载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-08T01:55:58+08:00"
-              content="2017-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/08/中间证书使用/" itemprop="url">
-              
-                <span itemprop="name">中间证书使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-08T01:34:15+08:00"
-              content="2017-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/07/https站点引用http链接/" itemprop="url">
-              
-                <span itemprop="name">https站点引用http链接</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-07T22:39:52+08:00"
-              content="2017-05-07" >
-          05-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/http-缓存控制/" itemprop="url">
-              
-                <span itemprop="name">http 缓存控制</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T04:33:36+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/wireshark使用/" itemprop="url">
-              
-                <span itemprop="name">wireshark使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T04:32:59+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/tcptrace使用/" itemprop="url">
-              
-                <span itemprop="name">tcptrace使用</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T04:32:05+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/TCP三次握手和四次挥手/" itemprop="url">
-              
-                <span itemprop="name">TCP三次握手和四次挥手</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T03:35:18+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/06/浏览器的并发限制/" itemprop="url">
-              
-                <span itemprop="name">浏览器的并发限制</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-06T03:10:53+08:00"
-              content="2017-05-06" >
-          05-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/03/空壳主体/" itemprop="url">
-              
-                <span itemprop="name">空壳主体</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-03T10:00:31+08:00"
-              content="2017-05-03" >
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/01/在chrome调试js/" itemprop="url">
-              
-                <span itemprop="name">在chrome调试js</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-01T12:40:04+08:00"
-              content="2017-05-01" >
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2017/05/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/2017/05/">1</a><span class="page-number current">2</span>
-  </nav>
-
-
+    </div>
+  </div>
 
 
           </div>
@@ -685,6 +473,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -887,11 +679,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
